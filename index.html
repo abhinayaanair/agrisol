@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+        :root {
+            --navbar-height: 6rem;
+            --green-gradient: linear-gradient(to left, #007C2E, #16A34A);
+            --page-padding-horizontal: 8rem;
+            --page-gap: 5rem;
+            --card-bg-light: #d3f8dd;
+            --card-bg-gradient: linear-gradient(to right, #d3f8dd, #e8ffea);
+            --title-green: #16A34A;
+            --title-grey: #7F7F7F;
+            --text-grey: #555555;
+            --subheading-green: green;
+            --heading-font-size: 32px;
+            --subheading-font-size: 14px;
+            --carousel-caption-width: 55rem;
+            --carousel-caption-top: 18rem;
+            --cta-width: 15rem;
+            --stat-card-width: 17rem;
+            --stat-card-bg: rgba(22, 163, 74, 0.6);
+        }
+
+
+        .navbar {
+            width: 100%;
+            height: var(--navbar-height);
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar img,
+        .navbar ul {
+            margin: 0 9rem;
+        }
+
+        .navbar ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            color: white;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            top: var(--carousel-caption-top);
+            left: 9rem;
+            width: var(--carousel-caption-width);
+            text-align: left;
+        }
+
+        .carousel-caption h1 {
+            font-size: 3.5rem;
+        }
+
+        .carousel-caption p {
+            font-size: 1.2rem;
+        }
+
+        .cta-button {
+            background: var(--green-gradient);
+            padding: 1rem;
+            width: var(--cta-width);
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .page-two {
+            background-color: #fafafa;
+        }
+
+        .page-four {
+            background-color: #E8FFEA;
+            margin: var(--page-gap) 0;
+            padding: 1rem 0;
+        }
+
+        .page-two-sub,
+        .page-four-sub {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            margin: 2.5rem 0rem;
+            padding: 0 var(--page-padding-horizontal);
+        }
+
+        .page-four-sub {
+            gap: var(--page-gap);
+        }
+
+        .left-section-two {
+            width: 55%;
+        }
+
+        .right-section-two {
+            width: 45%;
+            display: flex;
+            justify-content: end;
+            padding: 0;
+        }
+
+        .left-section-four {
+            width: 45%;
+            display: flex;
+            justify-content: start;
+            padding: 0;
+        }
+
+        .right-section-four {
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+
+        .green-titles {
+            color: var(--title-green);
+            text-transform: uppercase;
+            font-size: var(--subheading-font-size);
+            margin-bottom: 5px;
+        }
+
+        .grey-titles {
+            color: var(--title-grey);
+        }
+
+        .grey-paragraph {
+            color: var(--text-grey);
+        }
+
+        .right-section-four h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .product-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .product-card {
+            background: var(--card-bg-gradient);
+            padding: 15px 20px;
+            display: flex;
+            align-items: flex-start;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .leaf-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .product-content h5 {
+            margin: 0 0 6px 0;
+            font-size: 16px;
+            color: #222;
+        }
+
+        .product-content p {
+            margin: 0;
+            font-size: 14px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        .icons {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .icon {
+            text-align: center;
+        }
+
+        .page-three {
+            padding-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .features-section {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .subheading {
+            color: var(--subheading-green);
+            text-transform: uppercase;
+            font-size: var(--subheading-font-size);
+            margin-bottom: 10px;
+        }
+
+        .heading {
+            font-size: var(--heading-font-size);
+            margin-bottom: 40px;
+        }
+
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-self: center;
+            gap: 20px;
+            justify-content: space-evenly;
+            width: 80%;
+        }
+
+        .card {
+            flex: 1 1 calc(25% - 20px);
+            max-width: calc(25% - 20px);
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .page-five,
+        .page-seven {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            padding: 2.5rem;
+        }
+
+        .drone-products {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .drone-product {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5rem;
+            width: 30%;
+        }
+
+        .drone-caption {
+            width: 70%;
+            font-size: 14px;
+        }
+
+        .button-width {
+            width: 16rem;
+            justify-self: center;
+            align-self: center;
+            margin-top: 3rem;
+        }
+
+        .page-six {
+            width: 100%;
+            height: 24rem;
+            background-image: url('assets/Stats_Image.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .stat-cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stat-card {
+            background-color: var(--stat-card-bg);
+            border-radius: 16px;
+            padding: 30px 20px;
+            width: var(--stat-card-width);
+            color: #fff;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-card h3 {
+            font-size: 24px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .page-seven-sub {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .agrisol-icons {
+            width: 92%;
+            margin: 3rem;
+        }
+
+        .agrisol-icons .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            padding: 0 4rem;
+        }
+
+        .grey-border {
+            border-right: 1px solid grey;
+        }
+
+        .agrisol-icons img {
+            width: 3rem;
+        }
+
+        .agrisol-icons h5 {
+            font-size: 1rem;
+        }
+
+        .agrisol-icons p {
+            font-size: 0.8rem;
+        }
+
+        .page-eight {
+
+            width: 100%;
+            height: 24rem;
+            background-image: url('assets/CTA image.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+       
+
+        /* Small Mobile (max-width: 576px) */
+        @media (max-width: 576px) {
+
+            #heroCarousel {
+                height: 100vh;
+            }
+
+            #heroCarousel img {
+                height: 100vh;
+                object-fit: cover;
+                object-position: 70% 60%;
+            }
+        }
+
+        /* Hide hamburger on desktop */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+    z-index: 3;
+}
+
+
+    </style>
+
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="page-one">
+            <div class="navbar">
+                <img src="assets/Logo.png" alt="Logo">
+            
+                <div class="hamburger" id="hamburger">
+                    &#9776;
+                </div>
+            
+                <ul class="nav-links" id="nav-links">
+                    <li>About</li>
+                    <li>Features</li>
+                    <li>Products</li>
+                    <li>Blog</li>
+                    <li>Contact Us</li>
+                    <li>Solution for Farmers</li>
+                </ul>
+            </div>
+            
+
+            <div id="heroCarousel" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/Hero 01.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Smart Farming, Smarter Profits!</h1>
+                            <br>
+                            <p>Agrisol brings AI, drones, and real-time insights together to help farmers boost yield,
+                                reduce costs, and make informed decisions—faster and easier than ever.</p>
+
+                            <button class="cta-button">Talk to an Expert &#8594; </button>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/Hero 02.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Drones That Work Smarter for Your Farm</h1>
+                            <br>
+                            <p>From crop spraying to surveillance and seeding, Agrisol’s advanced drones make precision
+                                farming effortless and efficient</p>
+
+                            <button class="cta-button">Talk to an Expert &#8594; </button>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/Hero 03.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Next-Gen Agriculture at Your Fingertips</h1>
+                            <br>
+                            <p>Monitor your farm, predict diseases, and optimize resources with Agridoot—your AI-powered
+                                digital farming assistant.</p>
+
+                            <button class="cta-button">Talk to an Expert &#8594; </button>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="page-two">
+            <div class="page-two-sub">
+                <div class="left-section-two">
+                    <p class="green-titles">About Us</p>
+                    <h2><b>Empowering <br>Farmers with Technology</b></h2>
+                    <hr>
+                    <div class="icons">
+
+
+                        <div class="icon">
+                            <img src="assets/icons/Property 1=Icon.png" alt="">
+                            <p class="grey-titles">Affordable Solutions</p>
+                        </div>
+                        <div class="icon">
+                            <img src="assets/icons/Property 1=2.png" alt="">
+                            <p class="grey-titles">AI-Driven Precision </p>
+                        </div>
+                        <div class="icon">
+                            <img src="assets/icons/Property 1=3.png" alt="">
+                            <p class="grey-titles">Cost Effective</p>
+                        </div>
+                        <div class="icon">
+                            <img src="assets/icons/Property 1=6.png" alt="">
+                            <p class="grey-titles">24/7 Support</p>
+                        </div>
+
+
+                    </div>
+                    <hr>
+
+                    <p class="grey-paragraph">Agrisol is transforming farming with AI, satellite monitoring, and drone
+                        technology, giving farmers real-time insights, predictive analytics, and automated solutions.
+                        From crop health monitoring and disease prediction to precision spraying and smart irrigation,
+                        our technology helps farmers optimize resources, reduce risks, and maximize yields—all while
+                        keeping costs low.</p>
+                    <p class="grey-paragraph">Our mission is to make precision farming accessible and affordable for
+                        every farmer. With data-driven insights, seamless automation, and expert support, Agrisol
+                        empowers farmers to make smarter decisions, improve efficiency, and achieve sustainable growth
+                        in an ever-evolving agricultural landscape. </p>
+
+                    <button class="cta-button">Talk to an Expert &#8594; </button>
+                </div>
+                <div class="right-section-two">
+                    <img src="assets/image.png" class="mobile-hidden" alt="">
+                </div>
+            </div>
+
+
+        </div>
+        <div class="page-three">
+            <div class="page-three-sub">
+                <h5 class="subheading">Product Features</h5>
+                <h1 class="heading">Transforming Agriculture with Smart Solutions</h1>
+
+                <div class="grid-container">
+                    <div class="card">
+                        <img src="icons/efficiency.svg" alt="" />
+                        <h3>Increased Efficiency</h3>
+                        <p>Automate farm monitoring and reduce manual work.</p>
+                    </div>
+                    <div class="card">
+                        <img src="icons/disease.svg" alt="" />
+                        <h3>Disease Prediction</h3>
+                        <p>AI-powered detection prevents major losses.</p>
+                    </div>
+                    <div class="card">
+                        <img src="icons/satellite.svg" alt="" />
+                        <h3>Satellite Crop Monitoring</h3>
+                        <p>Track crop health remotely in real-time.</p>
+                    </div>
+                    <div class="card">
+                        <img src="icons/inputs.svg" alt="" />
+                        <h3>Access to Quality Inputs</h3>
+                        <p>Verified seeds, fertilizers, and tools.</p>
+                    </div>
+                    <div class="card">
+                        <img src="icons/tagging.svg" alt="" />
+                        <h3>Farm Tagging</h3>
+                        <p>Digitally map your farm for better management.</p>
+                    </div>
+                    <div class="card">
+                        <img src="icons/planner.svg" alt="" />
+                        <h3>Crop Planner</h3>
+                        <p>AI-based recommendations for planting schedules.</p>
+                    </div>
+                    <div class="card">
+                        <img src="icons/weather.svg" alt="" />
+                        <h3>Weather Alerts</h3>
+                        <p>Stay ahead of unpredictable weather changes.</p>
+                    </div>
+                    <div class="card">
+                        <img src="icons/soil.svg" alt="" />
+                        <h3>Soil Testing</h3>
+                        <p>Get detailed soil reports for precise crop planning.</p>
+                    </div>
+                    <div class="card">
+                        <img src="icons/insurance.svg" alt="" />
+                        <h3>Crop Insurance</h3>
+                        <p>Secure your farm from financial loss.</p>
+                    </div>
+                    <div class="card">
+                        <img src="icons/experts.svg" alt="" />
+                        <h3>Connect with Experts</h3>
+                        <p>24/7 guidance from top agronomists.</p>
+                    </div>
+                    <div class="card">
+                        <img src="icons/market.svg" alt="" />
+                        <h3>Market Linkage</h3>
+                        <p>Get direct access to buyers & fair pricing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-four">
+            <div class="page-four-sub">
+                <div class="left-section-four">
+                    <img src="assets/Frame 4.png" alt="">
+                </div>
+                <div class="right-section-four">
+                    <p class="green-titles">Product</p>
+                    <h2><b>Smart Agriculture System</b></h2>
+
+                    <div class="product-cards">
+                        <div class="product-card">
+                            <img src="assets/icons/leaf.svg" alt="Leaf Icon" class="leaf-icon" />
+                            <div class="product-content">
+                                <h5><b>AI-Powered Crop Monitoring</b></h5>
+                                <p>
+                                    Get real-time insights on crop health, detect diseases early, and optimize yield
+                                    with AI-driven analytics.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="assets/icons/leaf.svg" alt="Leaf Icon" class="leaf-icon" />
+                            <div class="product-content">
+                                <h5><b>Satellite-Based Farm Tracking</b></h5>
+                                <p>
+                                    Monitor your farmland remotely with high-resolution satellite imagery for better
+                                    planning and resource allocation.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="assets/icons/leaf.svg" alt="Leaf Icon" class="leaf-icon" />
+                            <div class="product-content">
+                                <h5><b>Automated Soil & Weather Analysis</b></h5>
+                                <p>
+                                    Receive instant updates on soil conditions and weather patterns to make informed
+                                    farming decisions.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="assets/icons/leaf.svg" alt="Leaf Icon" class="leaf-icon" />
+                            <div class="product-content">
+                                <h5><b>Smart Farm Management Dashboard</b></h5>
+                                <p>
+                                    Access all your farm data in one place—track productivity, analyze trends, and
+                                    optimize farm operations effortlessly.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="cta-button">Get a Free Demo &#8594;</button>
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="page-five">
+            <p class="green-titles">PRODUCT</p>
+            <h1>Precision Farming with Advanced <br>Drones</h1>
+
+            <div class="drone-products">
+                <div class="drone-product">
+                    <img src="assets/drone/Rectangle 655.png" alt="">
+                    <h5>Crop Spraying Drone</h5>
+                    <p class="drone-caption">Automated pesticide and fertilizer application with precision spraying.</p>
+                </div>
+                <div class="drone-product">
+                    <img src="assets/drone/Rectangle 654.png" alt="">
+                    <h5>Surveillance Drone</h5>
+                    <p class="drone-caption">Monitor crop health in real time with high-resolution imaging.</p>
+                </div>
+                <div class="drone-product">
+                    <img src="assets/drone/Rectangle 655.png" alt="">
+                    <h5>Seeding Drone</h5>
+                    <p class="drone-caption">Plant seeds faster and evenly across large farmlands.</p>
+                </div>
+            </div>
+            <button class="cta-button button-width">Contact us for a free Demo &#8594;</button>
+        </div>
+        <div class="page-six">
+            <div class="stat-cards">
+                <div class="stat-card">
+                    <h3>50% <img src="assets/icons/growth.svg" alt=""> </h3>
+                    <p>Faster Farm Management with Agrisol AI.</p>
+                </div>
+                <div class="stat-card">
+                    <h3>30% <img src="assets/icons/cash.png" alt=""> </h3>
+                    <p>Lower Costs on pesticides and fertilizers.</p>
+                </div>
+                <div class="stat-card ">
+                    <h3>500+ <img src="assets/icons/cube.png" alt=""> </h3>
+                    <p>Acres Digitally Managed across pilot programs.</p>
+                </div>
+                <div class="stat-card ">
+                    <h3>20% <img src="assets/icons/building.png" alt=""> </h3>
+                    <p>Higher Yields using predictive insights.</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="page-seven">
+            <div class="page-seven-sub">
+                <p class="green-titles">WHY AGRISOL?</p>
+                <h1>Why Farmers Choose Agrisol</h1>
+
+                <div class="icons agrisol-icons">
+
+
+                    <div class="icon grey-border">
+                        <img src="assets/icons/Property 1=4.png" alt="">
+                        <h5>Higher Crop Yields</h5>
+                        <p class="grey-titles">AI-driven insights optimize farming.</p>
+                    </div>
+                    <div class="icon grey-border">
+                        <img src="assets/icons/Property 1=3.png" alt="">
+                        <h5>Lower Costs </h5>
+                        <p class="grey-titles">Save money with smart input usage.</p>
+                    </div>
+                    <div class="icon grey-border">
+                        <img src="assets/icons/Property 1=5.png" alt="">
+                        <h5>Market Access</h5>
+                        <p class="grey-titles">Directly sell crops for better profits.</p>
+                    </div>
+                    <div class="icon">
+                        <img src="assets/icons/Property 1=6.png" alt="">
+                        <h5>24/7 Expert Support </h5>
+                        <p class="grey-titles">Get guidance anytime, anywhere.</p>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="page-eight">
+
+            <div class="page-eight-sub">
+                <h3>Ready to Upgrade Your Farming?</h3>
+                <p>Join the smart farming revolution with Agrisol—get expert advice and cutting-edge solutions today!
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+        <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
+
+
+</body>
+
+</html>
