@@ -26,6 +26,7 @@
             --cta-width: 15rem;
             --stat-card-width: 17rem;
             --stat-card-bg: rgba(22, 163, 74, 0.6);
+            --white: #fff;
         }
 
 
@@ -243,6 +244,7 @@
             height: 48px;
             margin-bottom: 15px;
             border-radius: 50%;
+            align-self: center;
         }
 
         .card h3 {
@@ -319,6 +321,7 @@
             border-radius: 16px;
             padding: 30px 20px;
             width: var(--stat-card-width);
+            /* you can override this below */
             color: #fff;
             text-align: center;
             backdrop-filter: blur(5px);
@@ -391,10 +394,93 @@
         }
 
 
-       
 
-        /* Small Mobile (max-width: 576px) */
+        .mobile-hidden {
+            display: block;
+        }
+
+        .desktop-hidden {
+            display: none;
+        }
+        .page-eight-sub{
+            display:flex
+        }
+        .left-section-eight{
+           
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+           color:white
+        }
+        .left-section-eight .cta-button{
+            color:#007C2E;
+            background: var(--white);
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .mobile-hidden {
+                display: none !important;
+            }
+
+            .desktop-hidden {
+                display: block !important;
+            }
+        }
+
+       
         @media (max-width: 576px) {
+            body {
+                overflow-x: hidden;
+                margin-bottom: 30vh;
+
+            }
+
+            .main {
+                width: 100%;
+
+            }
+
+            .navbar ul{
+                display: none;
+            }
+
+
+
+            .navbar img {
+                justify-self: start;
+            }
+
+            .navbar img {
+                margin: 0 2rem;
+                height: 2rem
+            }
+
+            .carousel-caption {
+                position: absolute;
+                top: var(--carousel-caption-top);
+                left: 2rem;
+                right: 2rem;
+                /* Add this */
+                width: auto;
+                /* Let it scale with container */
+                text-align: left;
+                white-space: normal;
+                /* Allow wrapping */
+                word-wrap: break-word;
+                /* Ensure long words wrap */
+            }
+
+
+            .carousel-caption h1 {
+                font-size: 2rem;
+            }
+
+            .carousel-caption p {
+                font-size: 0.8rem;
+
+            }
+
 
             #heroCarousel {
                 height: 100vh;
@@ -405,21 +491,212 @@
                 object-fit: cover;
                 object-position: 70% 60%;
             }
+
+            .page-two-sub {
+                flex-direction: column;
+
+                padding: 1.2rem;
+                margin-top: 0;
+
+            }
+
+            .page-two-sub hr {
+                width: 100%
+            }
+
+            .page-two-sub .icons {
+                flex-direction: column;
+            }
+
+            .left-section-two,
+            .right-section-two {
+                width: 100%
+            }
+
+            .right-section-two {
+                width: 100%;
+                display: flex;
+                justify-self: center;
+                align-self: center;
+
+            }
+
+            .right-section-two img {
+                width: 103%;
+
+                padding: 0;
+                margin: 0;
+            }
+
+
+
+
+            .grid-container {
+                width: 100%;
+
+                gap: 0.7rem;
+            }
+
+            .card {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+                height: 11rem;
+                padding: 0.8rem;
+            }
+
+            .card h3 {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+                color: #222;
+            }
+
+            .card p {
+                font-size: 0.8rem;
+                color: #555;
+                width: 100%;
+
+            }
+
+            .page-four-sub {
+                flex-direction: column;
+
+                padding: 0;
+            }
+
+            .right-section-four {
+                width: 100%;
+            }
+
+            .left-section-four {
+                width: 100%;
+            }
+
+            .left-section-four img {
+                width: 100%;
+
+            }
+
+
+            .page-five h1 {
+                font-size: 1.5rem;
+                width: 100%;
+
+            }
+
+            .page-five h1 br {
+                display: none;
+            }
+
+            .drone-products {
+                flex-direction: column;
+
+                gap: 1rem
+            }
+
+            .drone-product {
+                width: 100%
+            }
+
+            .drone-product img {
+                width: 100%
+            }
+
+            .drone-product h5 {
+                font-size: 0.8rem;
+            }
+
+            .drone-product p {
+                width: 100%;
+                font-size: 0.6rem
+            }
+
+            .agrisol-icons {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap:0.8rem;
+                width:120%;
+                
+            }
+
+            .agrisol-icons .icon {
+                width: 47%;
+                /* 2 per row */
+                border:1px solid grey;
+               
+                padding: 0.5rem 0.9rem;
+                /* slight padding for spacing */
+                box-sizing: border-box;
+                justify-content: center;
+                align-items: center;
+                border-radius:1rem;
+
+                
+            }
+            .agrisol-icons .icon img{
+                justify-self: center;
+                align-self: center;
+                margin-bottom: 1rem;
+            }
+            .page-eight{
+                height: 90vh;
+                border:2px solid red;
+            }
+            .page-eight-sub{
+               flex-direction: column;
+            }
+            .page-eight-sub img{
+                width:100%
+            }
+            .page-eight-sub h3{
+                font-size: 1.7rem;
+            }
+            .page-eight-sub p{
+                font-size: 0.9rem;
+                margin-bottom: 3rem;
+            }
+            .right-section-eight{
+                
+            }
+            .right-section-eight img{
+                width:100%;
+                border:2px solid white
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stat-card {
+                flex: 0 1 calc(50% - 10px);
+                /* Two per row with gap */
+                width: auto;
+                /* override any fixed width */
+            }
+
+            .stat-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .stat-card h3 img {
+                height: 0.9rem
+            }
+
+            .stat-card p {
+                font-size: 0.7rem;
+            }
+           
         }
 
         /* Hide hamburger on desktop */
-.hamburger {
-    display: none;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    right: 2rem;
-    top: 1.5rem;
-    z-index: 3;
-}
-
-
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            right: 2rem;
+            top: 1.5rem;
+            z-index: 3;
+        }
     </style>
 
 
@@ -430,11 +707,11 @@
         <div class="page-one">
             <div class="navbar">
                 <img src="assets/Logo.png" alt="Logo">
-            
+
                 <div class="hamburger" id="hamburger">
                     &#9776;
                 </div>
-            
+
                 <ul class="nav-links" id="nav-links">
                     <li>About</li>
                     <li>Features</li>
@@ -444,7 +721,7 @@
                     <li>Solution for Farmers</li>
                 </ul>
             </div>
-            
+
 
             <div id="heroCarousel" class="carousel slide">
                 <div class="carousel-indicators">
@@ -458,7 +735,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="assets/Hero 01.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption  d-md-block">
                             <h1>Smart Farming, Smarter Profits!</h1>
                             <br>
                             <p>Agrisol brings AI, drones, and real-time insights together to help farmers boost yield,
@@ -469,7 +746,7 @@
                     </div>
                     <div class="carousel-item">
                         <img src="assets/Hero 02.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption  d-md-block">
                             <h1>Drones That Work Smarter for Your Farm</h1>
                             <br>
                             <p>From crop spraying to surveillance and seeding, Agrisol’s advanced drones make precision
@@ -480,7 +757,7 @@
                     </div>
                     <div class="carousel-item">
                         <img src="assets/Hero 03.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption  d-md-block">
                             <h1>Next-Gen Agriculture at Your Fingertips</h1>
                             <br>
                             <p>Monitor your farm, predict diseases, and optimize resources with Agridoot—your AI-powered
@@ -556,57 +833,57 @@
 
                 <div class="grid-container">
                     <div class="card">
-                        <img src="icons/efficiency.svg" alt="" />
+                        <img src="assets/product-features/efficiency.png" alt="" />
                         <h3>Increased Efficiency</h3>
                         <p>Automate farm monitoring and reduce manual work.</p>
                     </div>
                     <div class="card">
-                        <img src="icons/disease.svg" alt="" />
+                        <img src="assets/product-features/disease-prediction.png" alt="" />
                         <h3>Disease Prediction</h3>
                         <p>AI-powered detection prevents major losses.</p>
                     </div>
                     <div class="card">
-                        <img src="icons/satellite.svg" alt="" />
+                        <img src="assets/product-features/crop-monitor.png" alt="" />
                         <h3>Satellite Crop Monitoring</h3>
                         <p>Track crop health remotely in real-time.</p>
                     </div>
                     <div class="card">
-                        <img src="icons/inputs.svg" alt="" />
+                        <img src="assets/product-features/quality-issues.png" alt="" />
                         <h3>Access to Quality Inputs</h3>
                         <p>Verified seeds, fertilizers, and tools.</p>
                     </div>
                     <div class="card">
-                        <img src="icons/tagging.svg" alt="" />
+                        <img src="assets/product-features/farm-tagging.png" alt="" />
                         <h3>Farm Tagging</h3>
                         <p>Digitally map your farm for better management.</p>
                     </div>
                     <div class="card">
-                        <img src="icons/planner.svg" alt="" />
+                        <img src="assets/product-features/crop-planner.png" alt="" />
                         <h3>Crop Planner</h3>
                         <p>AI-based recommendations for planting schedules.</p>
                     </div>
                     <div class="card">
-                        <img src="icons/weather.svg" alt="" />
+                        <img src="assets/product-features/weather-alerts.png" alt="" />
                         <h3>Weather Alerts</h3>
                         <p>Stay ahead of unpredictable weather changes.</p>
                     </div>
                     <div class="card">
-                        <img src="icons/soil.svg" alt="" />
+                        <img src="assets/product-features/soil-test.png" alt="" />
                         <h3>Soil Testing</h3>
                         <p>Get detailed soil reports for precise crop planning.</p>
                     </div>
                     <div class="card">
-                        <img src="icons/insurance.svg" alt="" />
+                        <img src="assets/product-features/crop-insurance.png" alt="" />
                         <h3>Crop Insurance</h3>
                         <p>Secure your farm from financial loss.</p>
                     </div>
                     <div class="card">
-                        <img src="icons/experts.svg" alt="" />
+                        <img src="assets/product-features/experts.png" alt="" />
                         <h3>Connect with Experts</h3>
                         <p>24/7 guidance from top agronomists.</p>
                     </div>
                     <div class="card">
-                        <img src="icons/market.svg" alt="" />
+                        <img src="assets/product-features/market-linkage.png" alt="" />
                         <h3>Market Linkage</h3>
                         <p>Get direct access to buyers & fair pricing.</p>
                     </div>
@@ -615,7 +892,7 @@
         </div>
         <div class="page-four">
             <div class="page-four-sub">
-                <div class="left-section-four">
+                <div class="left-section-four mobile-hidden">
                     <img src="assets/Frame 4.png" alt="">
                 </div>
                 <div class="right-section-four">
@@ -669,6 +946,9 @@
                     </div>
 
                     <button class="cta-button">Get a Free Demo &#8594;</button>
+                </div>
+                <div class="left-section-four desktop-hidden">
+                    <img src="assets/Frame 4.png" alt="">
                 </div>
 
 
@@ -757,11 +1037,32 @@
         <div class="page-eight">
 
             <div class="page-eight-sub">
-                <h3>Ready to Upgrade Your Farming?</h3>
-                <p>Join the smart farming revolution with Agrisol—get expert advice and cutting-edge solutions today!
-                </p>
+                <div class="left-section-eight">
+                    <h3>Ready to Upgrade Your Farming?</h3>
+                    <p>Join the smart farming revolution with Agrisol—get expert advice and cutting-edge solutions
+                        today!
+                    </p>
+                    <button class="cta-button2 cta-button">Contact us &#8594;</button>
+                </div>
+                <div class="right-section-eight">
+                    <img src="assets/farmer-image.png" class="mobile-hidden" alt="">
+                    <img src="assets/farmer-mobile-image.png" class="desktop-hidden " alt="">
+                </div>
+
             </div>
 
+        </div>
+        <div class="footer">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <img src="assets/Logo.png" alt="">
+                </div>
+                <div class="footer-right"></div>
+            </div>
+            <div class="footer-bottom">
+
+            </div>
+            
         </div>
 
     </div>
@@ -770,14 +1071,14 @@
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
 
-        <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
 
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-</script>
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 
 
 </body>
