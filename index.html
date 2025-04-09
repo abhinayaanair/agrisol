@@ -7,6 +7,10 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
             --navbar-height: 6rem;
@@ -299,7 +303,7 @@
         .page-six {
             width: 100%;
             height: 24rem;
-            background-image: url('assets/Stats_Image.png');
+            background-image: url('assets/farm-image.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -402,21 +406,89 @@
         .desktop-hidden {
             display: none;
         }
-        .page-eight-sub{
-            display:flex
+
+        .page-eight-sub {
+            display: flex
         }
-        .left-section-eight{
-           
+
+        .left-section-eight {
+
             display: flex;
             flex-direction: column;
             justify-content: center;
-           color:white
+            color: white
         }
-        .left-section-eight .cta-button{
-            color:#007C2E;
+
+        .left-section-eight .cta-button {
+            color: #007C2E;
             background: var(--white);
         }
 
+        .footer {
+            background-color: #09441f;
+            height: 40vh;
+            padding:4rem
+        }
+
+        .footer-top {
+            display: flex;
+           
+            gap:1rem;
+            justify-content: space-between;
+          margin-bottom: 1rem;
+        }
+
+        .footer-left, .footer-right {
+            display: flex;
+            flex-direction: column;
+            width:45%;
+            color:var(--white);
+            padding:1rem;
+            
+        }
+
+        .footer-left img{
+            width:30%;
+            margin-bottom: 1rem;
+        }
+        .footer-left i, .footer-right i {
+            color: #16A34A;
+            margin: 0.2rem;
+            background-color: #073c1a;
+            padding:0.5rem;
+            border-radius: 10px;
+        }
+        .footer-right{
+            background-color: #073c1a;
+            
+            border-radius:0.8rem
+        }
+        .footer-bottom{
+            width: 100%;
+            display: flex;
+            color:white;
+            gap:10%
+        }
+        .footer-bottom-left,.footer-bottom-right{
+           
+            display: flex;
+            
+            align-items: center;
+            width:45%
+        }
+
+        .footer-bottom-left a{
+            text-decoration: none;
+            color:rgb(255, 255, 255);
+            padding:0 1rem;
+            border-right:1px solid rgb(149, 149, 149);
+            font-size:0.9rem
+
+        }
+        .footer-bottom-right{
+            justify-content: end;
+            
+        }
         /* Mobile styles */
         @media (max-width: 768px) {
             .mobile-hidden {
@@ -428,12 +500,11 @@
             }
         }
 
-       
+
         @media (max-width: 576px) {
             body {
                 overflow-x: hidden;
-                margin-bottom: 30vh;
-
+               padding-bottom: 20vh;
             }
 
             .main {
@@ -441,7 +512,7 @@
 
             }
 
-            .navbar ul{
+            .navbar ul {
                 display: none;
             }
 
@@ -614,53 +685,63 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap:0.8rem;
-                width:120%;
-                
+                gap: 0.8rem;
+                width: 120%;
+
             }
 
             .agrisol-icons .icon {
                 width: 47%;
                 /* 2 per row */
-                border:1px solid grey;
-               
+                border: 1px solid grey;
+
                 padding: 0.5rem 0.9rem;
                 /* slight padding for spacing */
                 box-sizing: border-box;
                 justify-content: center;
                 align-items: center;
-                border-radius:1rem;
+                border-radius: 1rem;
 
-                
+
             }
-            .agrisol-icons .icon img{
+
+            .agrisol-icons .icon img {
                 justify-self: center;
                 align-self: center;
                 margin-bottom: 1rem;
             }
-            .page-eight{
+
+            .page-eight {
                 height: 90vh;
-                border:2px solid red;
+
             }
-            .page-eight-sub{
-               flex-direction: column;
+
+            .page-eight-sub {
+                flex-direction: column;
+
             }
-            .page-eight-sub img{
-                width:100%
+
+            .page-eight-sub img {
+                width: 100%
             }
-            .page-eight-sub h3{
+
+            .page-eight-sub h3 {
                 font-size: 1.7rem;
             }
-            .page-eight-sub p{
+
+            .page-eight-sub p {
                 font-size: 0.9rem;
                 margin-bottom: 3rem;
             }
-            .right-section-eight{
-                
+
+            .page-eight-sub button {
+                margin-bottom: 1rem;
             }
-            .right-section-eight img{
-                width:100%;
-                border:2px solid white
+
+            .right-section-eight img {
+                width: 100%;
+                transform: scale(1.1);
+
             }
         }
 
@@ -683,7 +764,26 @@
             .stat-card p {
                 font-size: 0.7rem;
             }
-           
+            .footer{
+                flex-direction: column;
+                padding:1.5rem;
+            }
+            .footer-top{
+                width: 100%;
+                border:2px solid red;
+                flex-direction: column;
+            }
+            .footer-left{
+                width:100%
+            }
+            .footer-right{
+                width:100%;
+                font-size:0.7rem
+            }
+
+            .footer-right p{
+                margin-bottom: 0;
+            }
         }
 
         /* Hide hamburger on desktop */
@@ -1056,13 +1156,39 @@
             <div class="footer-top">
                 <div class="footer-left">
                     <img src="assets/Logo.png" alt="">
+
+                    <div class="footer-icons">
+                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href=""><i class="fa-brands fa-youtube"></i></a>
+
+                    </div>
                 </div>
-                <div class="footer-right"></div>
+                <div class="footer-right">
+                    <p><i class="fa-solid fa-envelope"></i> agrisol@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>+91 95910 09606</p>
+                    <p><i class="fa-solid fa-location-dot"></i>123 Innovation Hub, Tech Park, Bangalore, Karnataka 560001</p>
+                </div>
             </div>
             <div class="footer-bottom">
 
+                <div class="footer-bottom-left">
+                    <p>
+                        <a href="">Home</a>
+                        <a href="">About</a>
+                        <a href="">Solutions</a>
+                        <a href="">Contact</a>
+                        <a href="">Products</a>
+                    </p>
+                </div>
+
+                <div class="footer-bottom-right">
+                    <p>Copyright &copy; 2025Agrisol</p>
+                </div>
             </div>
-            
+
         </div>
 
     </div>
