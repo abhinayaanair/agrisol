@@ -27,6 +27,7 @@
             --subheading-font-size: 14px;
             --carousel-caption-width: 55rem;
             --carousel-caption-top: 18rem;
+            --carousel-caption-top-mobile: 22rem;
             --cta-width: 15rem;
             --stat-card-width: 17rem;
             --stat-card-bg: rgba(22, 163, 74, 0.6);
@@ -427,68 +428,76 @@
         .footer {
             background-color: #09441f;
             height: 40vh;
-            padding:4rem
+            padding: 4rem
         }
 
         .footer-top {
             display: flex;
-           
-            gap:1rem;
+
+            gap: 1rem;
             justify-content: space-between;
-          margin-bottom: 1rem;
-        }
-
-        .footer-left, .footer-right {
-            display: flex;
-            flex-direction: column;
-            width:45%;
-            color:var(--white);
-            padding:1rem;
-            
-        }
-
-        .footer-left img{
-            width:30%;
             margin-bottom: 1rem;
         }
-        .footer-left i, .footer-right i {
+
+        .footer-left,
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            color: var(--white);
+            padding: 1rem;
+
+        }
+
+        .footer-left img {
+            width: 30%;
+            margin-bottom: 1rem;
+        }
+
+        .footer-left i,
+        .footer-right i {
             color: #16A34A;
             margin: 0.2rem;
             background-color: #073c1a;
-            padding:0.5rem;
+            padding: 0.5rem;
             border-radius: 10px;
         }
-        .footer-right{
+
+        .footer-right {
             background-color: #073c1a;
-            
-            border-radius:0.8rem
+
+            border-radius: 0.8rem
         }
-        .footer-bottom{
+
+        .footer-bottom {
             width: 100%;
             display: flex;
-            color:white;
-            gap:10%
+            color: white;
+            gap: 10%
         }
-        .footer-bottom-left,.footer-bottom-right{
-           
+
+        .footer-bottom-left,
+        .footer-bottom-right {
+
             display: flex;
-            
+
             align-items: center;
-            width:45%
+            width: 45%
         }
 
-        .footer-bottom-left a{
+        .footer-bottom-left a {
             text-decoration: none;
-            color:rgb(255, 255, 255);
-            padding:0 1rem;
-            border-right:1px solid rgb(149, 149, 149);
-            font-size:0.9rem
+            color: rgb(255, 255, 255);
+            padding: 0 1rem;
+            border-right: 1px solid rgb(149, 149, 149);
+            font-size: 0.9rem
+        }
+
+        .footer-bottom-right {
+            justify-content: end;
 
         }
-        .footer-bottom-right{
-            justify-content: end;
-            
-        }
+
         /* Mobile styles */
         @media (max-width: 768px) {
             .mobile-hidden {
@@ -504,7 +513,7 @@
         @media (max-width: 576px) {
             body {
                 overflow-x: hidden;
-               padding-bottom: 20vh;
+
             }
 
             .main {
@@ -529,9 +538,9 @@
 
             .carousel-caption {
                 position: absolute;
-                top: var(--carousel-caption-top);
-                left: 2rem;
-                right: 2rem;
+                top: var(--carousel-caption-top-mobile);
+                left: 3rem;
+                right: 3rem;
                 /* Add this */
                 width: auto;
                 /* Let it scale with container */
@@ -544,7 +553,7 @@
 
 
             .carousel-caption h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .carousel-caption p {
@@ -554,11 +563,11 @@
 
 
             #heroCarousel {
-                height: 100vh;
+                height: 90vh;
             }
 
             #heroCarousel img {
-                height: 100vh;
+                height: 90vh;
                 object-fit: cover;
                 object-position: 70% 60%;
             }
@@ -764,40 +773,119 @@
             .stat-card p {
                 font-size: 0.7rem;
             }
-            .footer{
+
+            .footer {
                 flex-direction: column;
-                padding:1.5rem;
-            }
-            .footer-top{
-                width: 100%;
-                border:2px solid red;
-                flex-direction: column;
-            }
-            .footer-left{
-                width:100%
-            }
-            .footer-right{
-                width:100%;
-                font-size:0.7rem
+                padding: 1.5rem;
+                height: 50vh
             }
 
-            .footer-right p{
+            .footer-top {
+                width: 100%;
+
+                flex-direction: column;
+            }
+
+            .footer-left {
+                width: 100%
+            }
+
+            .footer-right {
+                width: 100%;
+                font-size: 0.7rem
+            }
+
+            .footer-right p {
                 margin-bottom: 0;
             }
-        }
 
-        /* Hide hamburger on desktop */
-        .hamburger {
-            display: none;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-            position: absolute;
-            right: 2rem;
-            top: 1.5rem;
-            z-index: 3;
+            .footer-bottom {
+                flex-direction: column;
+                width: 100%;
+
+            }
+
+            .footer-bottom-left {
+                width: 100%;
+
+            }
+
+            .footer-bottom-left p {
+                width: 100%;
+                padding-left: -1rem;
+
+
+            }
+
+            .footer-bottom-left a {
+                font-size: 0.7rem;
+            }
+
+            .footer-bottom-right {
+                width: 100%;
+                display: flex;
+                justify-content: start;
+                font-size: 0.7rem;
+                padding-top: 0;
+
+
+            }
+
+            .footer-bottom-right {
+                padding-left: 1rem
+            }
+
+            .footer hr {
+                border: 1px solid grey
+            }
+
+            /* Base mobile nav style */
+            .mobile-nav {
+                position: absolute;
+                top: 5rem;
+                left: 0;
+                width: 100%;
+                background-color: rgba(49, 51, 50, 0.9);
+                color: white;
+                padding: 1rem 1rem 1rem 3rem;
+                display: flex;
+                flex-direction: column;
+                transform: translateY(-20px);
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s ease-in-out;
+                z-index: 999;
+            }
+
+            /* When menu is active */
+            .mobile-nav.show-nav {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .mobile-nav a {
+                padding: 0.8rem 0;
+                border-bottom: 1px solid #ddd;
+                text-decoration: none;
+                color: white;
+            }
+
+            .mobile-nav a:last-child {
+                border-bottom: none;
+            }
+
+            .hamburger {
+                position: absolute;
+                top: 1.5rem;
+                right: 3rem;
+                color: white;
+                font-size: 1.8rem;
+            }
+
         }
     </style>
+
 
 
 </head>
@@ -808,18 +896,27 @@
             <div class="navbar">
                 <img src="assets/Logo.png" alt="Logo">
 
-                <div class="hamburger" id="hamburger">
+                <div class="hamburger desktop-hidden" id="hamburger">
                     &#9776;
                 </div>
 
-                <ul class="nav-links" id="nav-links">
-                    <li>About</li>
-                    <li>Features</li>
-                    <li>Products</li>
-                    <li>Blog</li>
-                    <li>Contact Us</li>
-                    <li>Solution for Farmers</li>
-                </ul>
+                <nav class="nav-links mobile-hidden" id="nav-links">
+                    <a href="/index.html" class="nav-link">About</a>
+                    <a href="/about.html" class="nav-link">Features</a>
+                    <a href="/management.html" class="nav-link">Products</a>
+                    <a href="/gallery.html" class="nav-link">Blog</a>
+                    <a href="/contact.html" class="nav-link">Contact Us</a>
+                    <a href="/contact.html" class="nav-link">Solution for Farmers</a>
+                </nav>
+                <nav class="mobile-nav desktop-hidden" id="mobileNav" id="nav-links">
+                    <a href="/index.html" class="nav-link">About</a>
+                    <a href="/about.html" class="nav-link">Features</a>
+                    <a href="/management.html" class="nav-link">Products</a>
+                    <a href="/gallery.html" class="nav-link">Blog</a>
+                    <a href="/contact.html" class="nav-link">Contact Us</a>
+                    <a href="/contact.html" class="nav-link">Solution for Farmers</a>
+                </nav>
+
             </div>
 
 
@@ -1169,9 +1266,11 @@
                 <div class="footer-right">
                     <p><i class="fa-solid fa-envelope"></i> agrisol@gmail.com</p>
                     <p><i class="fa-solid fa-phone"></i>+91 95910 09606</p>
-                    <p><i class="fa-solid fa-location-dot"></i>123 Innovation Hub, Tech Park, Bangalore, Karnataka 560001</p>
+                    <p><i class="fa-solid fa-location-dot"></i>123 Innovation Hub, Tech Park, Bangalore, Karnataka
+                        560001</p>
                 </div>
             </div>
+            <hr class="desktop-hidden">
             <div class="footer-bottom">
 
                 <div class="footer-bottom-left">
@@ -1199,10 +1298,10 @@
 
     <script>
         const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
+        const mobileNav = document.getElementById('mobileNav');
 
         hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            mobileNav.classList.toggle('show-nav');
         });
     </script>
 
